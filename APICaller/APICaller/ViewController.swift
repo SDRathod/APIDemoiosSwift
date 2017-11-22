@@ -8,37 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, DetailVCDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         //self.LoginCall()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let peopleObj = People()
-        peopleObj.strNmae = "Samir"
-        peopleObj.strDesig = "iosDeveloper"
-        
-        if( self.InsertPeopleObjectintoDatabase(people: [peopleObj])){
-            print("record inserted");
-        }
-        else{
-           print("record not inserted"); 
-        }
+//        let peopleObj = People()
+//        peopleObj.strNmae = "Samir"
+//        peopleObj.strDesig = "iosDeveloper"
+//        
+//        if( self.InsertPeopleObjectintoDatabase(people: [peopleObj])){
+//            print("record inserted");
+//        }
+//        else{
+//           print("record not inserted"); 
+//        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailVC" {
+            let detailObj = segue.destination as! DetailVC
+            detailObj.delegate = self
+        }
     }
     
     //MARK: - LocalDB Insert BULK
@@ -87,14 +86,19 @@ class ViewController: UIViewController {
             
             print("dictData=\(dictData)")
             
-            
         }
         
-        
-        
-        
-        
+    }
+    
+    func passDatawhenBackClick(arrdata: [String]) {
+        print("delegate array print = \(arrdata)")
     }
 
 }
+
+//extension ViewController : DetailVCDelegate {
+//    func passDatawhenBackClick(arrdata: [String]) {
+//        print("delegate array print = \(arrdata)")
+//    }
+//}
 
