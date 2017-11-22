@@ -17,14 +17,60 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        self.LoginCall()
+        //self.LoginCall()
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let peopleObj = People()
+        peopleObj.strNmae = "Samir"
+        peopleObj.strDesig = "iosDeveloper"
+        
+        if( self.InsertPeopleObjectintoDatabase(people: [peopleObj])){
+            print("record inserted");
+        }
+        else{
+           print("record not inserted"); 
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - LocalDB Insert BULK
+    func InsertPeopleObjectintoDatabase(people: [People]) -> Bool {
+        
+        let success = DBManager.sharedInstance.addPeopleContact(toDbRegionArray: people, toTable: "EmpMaster")
+        return success;
+        
+    }
+    func saveImage(avtarData: NSData, name: String) -> String{
+        let paths =
+            NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        let currentDateTime = NSDate()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "ddMMyyyy-HHmmss"
+        var recordingName:String = ""
+        recordingName = formatter.string(from: currentDateTime as Date) + "\(name)" + ".png"
+        let savedImagePath = documentsDirectory + "/" + recordingName
+        avtarData.write(toFile: savedImagePath, atomically: false)
+        return recordingName
+    }
     
+    func getImage(named: String) ->String {
+        var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        let getImagePath = documentsDirectory + "/" + named
+        //let url:NSURL = NSURL(string: getImagePath)!
+        return getImagePath
+    }
+
     
     func LoginCall() {
 

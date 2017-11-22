@@ -16,9 +16,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.copyDatabaseIfNeeded()
         return true
     }
 
+    
+    //MARK: Copy Database
+    func copyDatabaseIfNeeded() {
+        // Move database file from bundle to documents folder
+        let fileManager = FileManager.default
+        let documentsUrl = fileManager.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        guard documentsUrl.count != 0 else {
+            return // Could not find documents URL
+        }
+        
+        let finalDatabaseURL = documentsUrl.first!.appendingPathComponent("Employee.db")
+        
+        if !( (try? finalDatabaseURL.checkResourceIsReachable()) ?? false) {
+            print("DB does not exist in documents folder")
+            
+            let documentsURL = Bundle.main.resourceURL?.appendingPathComponent("Employee.db")
+            
+            do {
+                print("document URL Path......=== \(documentsURL!.path)")
+                print("Final Database Path......=== \(finalDatabaseURL.path)")
+                try fileManager.copyItem(atPath: (documentsURL?.path)!, toPath: finalDatabaseURL.path)
+            } catch let error as NSError {
+                print("Couldn't copy file to final location! Error:\(error.description)")
+            }
+            
+        } else {
+            print("Database file found at path: \(finalDatabaseURL.path)")
+        }
+
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

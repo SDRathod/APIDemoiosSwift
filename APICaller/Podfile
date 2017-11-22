@@ -8,5 +8,5 @@ target 'APICaller' do
   # Pods for APICaller
 
     pod 'AFNetworking'
-
+    pod 'FMDB'
 end
