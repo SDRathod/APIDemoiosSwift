@@ -27,7 +27,7 @@ class SecondHomeVC: UIViewController {
         //https://makeapppie.com/2014/07/26/the-swift-swift-tutorial-how-to-use-uiviews-with-auto-layout-programmatically/
         //https://medium.com/zenchef-tech-and-product/how-to-visualize-reusable-xibs-in-storyboards-using-ibdesignable-c0488c7f525d
         
-        
+        //https://github.com/lanqy/swift-programmatically
         // Makeview
         
         let view1 = UIView()
