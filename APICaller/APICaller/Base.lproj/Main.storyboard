@@ -49,11 +49,11 @@
             </objects>
             <point key="canvasLocation" x="799" y="-1359"/>
         </scene>
-        <!--SecondTab-->
+        <!--Navigation Controller-->
         <scene sceneID="QPa-ga-pHH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="moy-dN-Hsl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SecondTab" id="aVa-8X-tt3"/>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="aVa-8X-tt3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RP7-Uy-fE2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
