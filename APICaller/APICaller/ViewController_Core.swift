@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController_Core: UIViewController {
     
     @IBOutlet weak var tblObj: UITableView!
     var peoples : [NSManagedObject] = []
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //1
-        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else {
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate_Core else {
             return
         }
         // get DB using managedContext

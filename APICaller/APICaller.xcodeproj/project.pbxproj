@@ -22,6 +22,7 @@
 		479D890A1FC6BA2F00CD7354 /* ViewController_Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D89081FC6BA2F00CD7354 /* ViewController_Core.swift */; };
 		47A8D00B1FC5D2F1007CB5E7 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8D00A1FC5D2F1007CB5E7 /* DetailVC.swift */; };
 		47A8D00D1FC5E7BB007CB5E7 /* SecondHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A8D00C1FC5E7BA007CB5E7 /* SecondHomeVC.swift */; };
+		47D981C51FCEA1A600ABE786 /* AlomDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D981C41FCEA1A600ABE786 /* AlomDemo.swift */; };
 		4DA6436695BBDB600A8DB07E /* Pods_APICaller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859C6B89D7B020BF3FB2872A /* Pods_APICaller.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		479D89081FC6BA2F00CD7354 /* ViewController_Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Core.swift; sourceTree = "<group>"; };
 		47A8D00A1FC5D2F1007CB5E7 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		47A8D00C1FC5E7BA007CB5E7 /* SecondHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondHomeVC.swift; sourceTree = "<group>"; };
+		47D981C41FCEA1A600ABE786 /* AlomDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlomDemo.swift; sourceTree = "<group>"; };
 		55BF1A3915B05CEE0D865956 /* Pods-APICaller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APICaller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APICaller/Pods-APICaller.debug.xcconfig"; sourceTree = "<group>"; };
 		859C6B89D7B020BF3FB2872A /* Pods_APICaller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APICaller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD967F82E412CAB899E79D3 /* Pods-APICaller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APICaller.release.xcconfig"; path = "Pods/Target Support Files/Pods-APICaller/Pods-APICaller.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				47A8D00C1FC5E7BA007CB5E7 /* SecondHomeVC.swift */,
 				479D89071FC6BA2F00CD7354 /* AppDelegate_Core.swift */,
 				479D89081FC6BA2F00CD7354 /* ViewController_Core.swift */,
+				47D981C41FCEA1A600ABE786 /* AlomDemo.swift */,
 				4745E7131FC55C1700821BF2 /* Main.storyboard */,
 				4745E7161FC55C1700821BF2 /* Assets.xcassets */,
 				4745E7181FC55C1700821BF2 /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 				47A8D00B1FC5D2F1007CB5E7 /* DetailVC.swift in Sources */,
 				4745E7101FC55C1700821BF2 /* AppDelegate.swift in Sources */,
 				4745E72B1FC5857000821BF2 /* DBManager.swift in Sources */,
+				47D981C51FCEA1A600ABE786 /* AlomDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
